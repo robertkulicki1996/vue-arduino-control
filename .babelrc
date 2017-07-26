@@ -1,0 +1,17 @@
+{
+  "presets": [
+    ["latest", {
+      "es2015": { "modules": false }
+    }]
+  ],
+  "plugins": [
+    ["module-resolver", {
+        "root": ["./src"],
+        "alias": {
+          "common": "./src/common",
+          "features": "./src/features"
+        }
+      }
+    ]
+  ]
+}
