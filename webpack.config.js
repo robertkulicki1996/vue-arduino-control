@@ -21,7 +21,7 @@ const getRules = () => [
     options: {
       loaders: {
         css: ExtractTextPlugin.extract({
-          use: 'css-loader',
+          use: ['css-loader', 'sass-loader'],
           fallback: 'vue-style-loader',
         }),
       },
@@ -91,7 +91,7 @@ const webpackConfig = {
   entry: {
     app: ['./app.js'],
   },
-  devtool: 'source-map',
+  devtool: environment === ENV.DEVELOPMENT ? 'source-map' : '',
   output: {
     publicPath: '/',
     path: DIST_PATH,
@@ -101,7 +101,7 @@ const webpackConfig = {
     extensions: ['.webpack.js', '.vue', '.js'],
     alias: {
       common: './src/common',
-      vue$: 'vue/dist/vue.js',
+      vue$: environment === ENV.DEVELOPMENT ? 'vue/dist/vue.js' : 'vue/dist/vue.runtime.min.js',
     },
   },
   module: {
