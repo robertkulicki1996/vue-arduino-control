@@ -12,9 +12,21 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bootstrap": "^4.0.0-beta",
+    "express": "^4.14.0",
+    "fs": "0.0.1-security",
+    "http": "0.0.0",
+    "http-server": "^0.9.0",
+    "johnny-five": "^0.10.6",
+    "jquery": "^3.2.1",
     "lodash": "^4.17.4",
+    "popper.js": "^1.12.1",
+    "socket.io": "^1.7.1",
+    "socket.io-client": "^2.0.3",
     "vue": "^2.2.6",
-    "vue-router": "^2.4.0"
+    "vue-range-slider": "^0.2.4",
+    "vue-router": "^2.4.0",
+    "vue-socket.io": "^2.1.1-a"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

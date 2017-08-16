@@ -1,5 +1,5 @@
 <template>
-  <button class="mybutton" v-on:click="click"> <!-- same as @click="click" -->
+  <button class="mybutton" v-on:click="click">
     {{ caption }}
   </button>
 </template>
@@ -18,9 +18,9 @@ export default {
 </script>
 
 <style scoped>
-  .mybutton {
-    background-color: tomato;
-    color: yellow;
-    border: 0;
-  }
+.mybutton {
+  background-color: tomato;
+  color: yellow;
+  border: 0;
+}
 </style>

@@ -21,18 +21,27 @@ const getRules = () => [
     options: {
       loaders: {
         css: ExtractTextPlugin.extract({
-          use: ['css-loader', 'sass-loader'],
+          use: 'css-loader',
           fallback: 'vue-style-loader',
         }),
       },
     },
-  }, {
+  },
+  {
+    test: /\.css$/,
+    use: ExtractTextPlugin.extract({
+      fallback: 'style-loader',
+      use: 'css-loader',
+    }),
+  },
+  {
     test: /\.jsx?$/,
     exclude: [/node_modules/],
     use: [{
       loader: 'babel-loader',
     }],
-  }, {
+  },
+  {
     test: /\.json?$/,
     exclude: [/node_modules/],
     use: [{
@@ -64,6 +73,7 @@ const getRules = () => [
   },
 ];
 
+
 const getPlugins = () => {
   const plugins = [
     new HtmlWebpackPlugin({
@@ -80,6 +90,12 @@ const getPlugins = () => {
     new ExtractTextPlugin({
       filename: '[name].bundle.css',
       disable: environment === ENV.DEVELOPMENT,
+    }),
+
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      Popper: 'popper.js',
     }),
   ];
 

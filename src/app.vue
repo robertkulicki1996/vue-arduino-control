@@ -7,33 +7,25 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router/dist/vue-router';
 
-import LoginRoutes from 'features/login/login.routes';
-import FoobarRoutes from 'features/foobar/foobar.routes';
+import DashboardRoutes from 'features/dashboard/dashboard.routes';
 
-import 'common/components'; // same as from '../../../common/components/index.js';
+import 'common/components'; 
+import Jquery from 'jquery';
+
+import BootstrapCSS from 'bootstrap/dist/css/bootstrap.css';
+import Bootstrap from 'bootstrap';
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: '/',
-    redirect(/* routeInfo */) {
-      /*
-        example:
-        if (someService.loggedIn) {
-          return '/foo';
-        } else {
-          return '/login';
-        }
-      */
-
-      return '/login';
+    redirect() {
+      return '/dashboard';
     },
   },
-  ...LoginRoutes,
-  ...FoobarRoutes,
+  ...DashboardRoutes,
 ];
-
 
 const router = new VueRouter({
   routes,
@@ -43,3 +35,4 @@ export default {
   router,
 };
 </script>
+
