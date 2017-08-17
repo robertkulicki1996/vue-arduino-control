@@ -3,7 +3,7 @@
     <h1>Control your arduino board</h1>
     <div class="row">
       <div class="col-md-6">
-        <button class="btn btn-success" @click='on'>Turn on the red diode attached to digital pin 11</button>
+        <button type="button" class="btn btn-primary" @click='on'>Turn on the red diode attached to digital pin 11</button>
       </div>
       <div class="col-md-6">
         <p v-if="msgOn">The diode is on </p>
@@ -42,6 +42,11 @@ const socket = io('http://localhost:5000');
 
 import RangeSlider from 'vue-range-slider'
 import 'vue-range-slider/dist/vue-range-slider.css'
+
+/*
+socket.on('stream', function(data){
+    app.title = data.title;
+}); */
 
 export default {
   name: 'dashboard-view',
@@ -108,7 +113,6 @@ p {
 }
 
 .slider {
-  /* overwrite slider styles */
   width: 400px !important;
 }
 </style>
