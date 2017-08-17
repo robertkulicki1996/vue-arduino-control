@@ -26,6 +26,7 @@ board.on('ready', () => {
   led.off();
   pin[11].led = led;
 
+  /*
   const photoresistor = new five.Sensor({
     pin: 'A2',
     freq: 500,
@@ -34,8 +35,6 @@ board.on('ready', () => {
   board.repl.inject({
     pot: photoresistor,
   });
-   
-  /*
 
   // "data" get the current reading from the photoresistor
   photoresistor.on('data', () => {
@@ -50,9 +49,7 @@ board.on('ready', () => {
     } else {
       pin[11].led.off();
     }
-  });
-
-  */
+  }); */
 });
 
 io.sockets.on('connection', (socket) => {
